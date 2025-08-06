@@ -22,7 +22,6 @@
             --danger: #ef4444;
             --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
             --rounded-sm: 0.25rem;
             --rounded: 0.5rem;
@@ -217,7 +216,7 @@
             padding: 5rem 2rem;
             text-align: center;
             margin: 2rem;
-            border-radius: var(--rounded-lg);
+            
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
@@ -266,15 +265,15 @@
         }
 
         .btn-outline {
-            background-color: transparent;
+            background-color:orange ;
             border: 2px solid white;
-            color: white;
+            color:black ;
         }
 
         .btn-outline:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color:#e67e22;
             transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+            
         }
 
         /* Main Content */
@@ -441,6 +440,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            color: #0077b5;
         }
 
         /* Features Section */
@@ -882,7 +882,13 @@
         .logo img {
     mix-blend-mode: multiply;
     background: transparent;
-}
+   }
+   .feature-card-link {
+     text-decoration: none;
+     color: inherit;
+     display: block;
+  }
+         
 
     </style>
 </head>
@@ -1241,7 +1247,9 @@
                 <p class="section-subtitle">We provide the best learning experience to transform your career</p>
             </div>
 
+            
             <div class="features-grid">
+                <a href="online.html" class="feature-card-link">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-laptop"></i>
@@ -1251,7 +1259,9 @@
                         Live interactive sessions with industry experts from the comfort of your home
                     </p>
                 </div>
+            </a>
 
+                <a href="offline.html" class="feature-card-link">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-chalkboard-teacher"></i>
@@ -1261,7 +1271,9 @@
                         State-of-the-art classrooms with hands-on practical sessions
                     </p>
                 </div>
+            </a>
 
+                <a href="assistance.html" class="feature-card-link">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-briefcase"></i>
@@ -1271,7 +1283,9 @@
                         100% placement support with resume building and mock interviews
                     </p>
                 </div>
+            </a>
 
+                <a href="certification.html" class="feature-card-link">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-certificate"></i>
@@ -1281,7 +1295,8 @@
                         Industry-recognized certifications to boost your career prospects
                     </p>
                 </div>
-            </div>
+            </a>
+          </div>
         </section>
 
         <!-- Testimonials -->
@@ -1375,9 +1390,8 @@
                 <ul class="footer-links">
                     <li class="footer-link"><a href="index.html">Home</a></li>
                     <li class="footer-link"><a href="about.html">About Us</a></li>
-                    <li class="footer-link"><a href="courses.html">Courses</a></li>
                     <li class="footer-link"><a href="newBatches.html">New Batches</a></li>
-                    <li class="footer-link"><a href="blog.html">Blog</a></li>
+                    <li class="footer-link"><a href="blogs.html">Blog</a></li>
                     <li class="footer-link"><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -1385,12 +1399,12 @@
             <div class="footer-col">
                 <h3 class="footer-heading">Courses</h3>
                 <ul class="footer-links">
-                    <li class="footer-link"><a href="fullstack.html">Full Stack Development</a></li>
-                    <li class="footer-link"><a href="aws-devops.html">AWS & DevOps</a></li>
-                    <li class="footer-link"><a href="data-science.html">Data Science</a></li>
-                    <li class="footer-link"><a href="data-analytics.html">Data Analytics</a></li>
-                    <li class="footer-link"><a href="ai-ml.html">AI & ML</a></li>
-                    <li class="footer-link"><a href="power-bi.html">Power BI</a></li>
+                    <li class="footer-link"><a href="fullStack.html">Full Stack Development</a></li>
+                    <li class="footer-link"><a href="awsDevops.html">AWS & DevOps</a></li>
+                    <li class="footer-link"><a href="dataScience.html">Data Science</a></li>
+                    <li class="footer-link"><a href="dataAnalytics.html">Data Analytics</a></li>
+                    <li class="footer-link"><a href="gen.html">Gen AI</a></li>
+                    <li class="footer-link"><a href="powerBi.html">Power BI</a></li>
                 </ul>
             </div>
 
@@ -1503,7 +1517,7 @@
     <script>
         // WhatsApp Functions
         function openWhatsApp() {
-            const phoneNumber = "+91 949455742";
+            const phoneNumber = "9494557422";
             const message = "Hello Hamsini Tech, I'm interested in your courses. Can you please provide more information?";
             const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
