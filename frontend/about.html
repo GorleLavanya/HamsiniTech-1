@@ -6,7 +6,6 @@
   <title>About Us - Hamsini Technologies</title>
 
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -14,109 +13,127 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-color: #fdfdfd;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f8faff, #eaf1ff);
+      color: #333;
     }
-    .header-image img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-  }
-
-
-    /* Navbar */
-    .navbar {
-      background-color: #0d1172;
+    /* Header Glass Style */
+    header {
+      background: rgba(0, 11, 36, 0.5);
+      color: white;
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-    .logo {
-      color: white;
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links li {
-      position: relative;
-    }
-
-    .nav-links a {
+    header a {
+      color: #fff;
       text-decoration: none;
-      color: white;
-      padding: 8px 12px;
-      display: block;
-      transition: background 0.3s;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.3s ease;
     }
 
-    .nav-links a:hover {
-      background-color: orange;
-      border-radius: 4px;
+    header a:hover {
+      color: #00b7ff;
     }
 
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 40px;
-      left: 0;
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      z-index: 1000;
-      min-width: 160px;
+    /* Header image and glass overlay */
+    .header-image {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
     }
 
-    .dropdown-menu li a {
-      color: #0d1172;
-      padding: 10px 15px;
+    .header-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
-    /* About Section */
+    
+    /* About Us Section with Glass Effect */
     .about-us-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 60px 20px;
-      background-color: #f9f9ff;
+      background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
     }
 
     .about-us-container {
-      max-width: 1000px;
-      margin: auto;
+      max-width: 900px;
+      padding: 40px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       text-align: center;
     }
 
     .about-title {
       font-size: 36px;
       color: #0d1172;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       font-weight: bold;
     }
 
     .about-description {
-      font-size: 16px;
-      line-height: 1.8;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #222;
       margin-bottom: 20px;
-      color: #444;
-      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .about-us-container {
+        padding: 25px;
+      }
+
+      .about-title {
+        font-size: 28px;
+      }
+
+      .glass-overlay {
+        padding: 20px;
+        max-width: 90%;
+      }
+
+      .glass-overlay h1 {
+        font-size: 22px;
+      }
+
+      .glass-overlay p {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 
 <body>
+   <!-- Header -->
+  <header>
+    <div><strong>Hamsini Tech Solutions</strong></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="newBatches.html">New Batches</a>
+      <a href="hire.html">Hire From Us</a>
+    </div>
+  </header>
 
-  <!-- HERO IMAGE -->
-     <div class="header-image">
-         <img src="about.jpg">
-        </div>
+  <!-- HERO IMAGE WITH GLASS OVERLAY -->
+  <div class="header-image">
+    <img src="about.jpg" alt="Header Image">
+    
+  </div>
+
   <!-- ABOUT US SECTION -->
   <section class="about-us-section">
     <div class="about-us-container">
