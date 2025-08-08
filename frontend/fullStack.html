@@ -6,37 +6,71 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
 <style>
-:root {
-  --primary: #0156ff;
-  --primary-dark: #003cb3;
-  --secondary: #ff7a00;
-  --gray-200: #e5e7eb;
-  --gray-700: #374151;
-  --dark: #111827;
-  --rounded-sm: 6px;
-  --rounded-lg: 12px;
-  --shadow-xl: 0 10px 15px rgba(0, 0, 0, 0.1);
-}
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* Header Banner */
-.header-image img {
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .glass-container {
+      min-height: 100vh;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      max-width: 1300px;
+      margin: auto;
+    }
+
+   header {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 15px 30px;
+      border-radius: 12px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    header a:hover {
+      color: #00cfff;
+    }
+
+    .header-image img {
       width: 100%;
       height: 300px;
       object-fit: cover;
-  }
+      border-radius: 12px;
+    }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    h2 {
+      color: #fff;
+      margin: 30px 0 10px 0;
+      font-size: 28px;
+    }
 
-/* Body Styling */
-body {
-  font-family: Arial, sans-serif;
-  background: white;
-  overflow-x: hidden;
-}
+
 
 /* Carousel Wrapper */
 .carousel-wrapper {
@@ -61,17 +95,20 @@ body {
 /* Each Course Card */
 .course-card {
   flex: 0 0 calc((100% - 60px) / 4);
-  height: 420px; /* increased height */
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  height: 420px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
- .course-card:hover {
+
+.course-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
@@ -141,17 +178,17 @@ body {
         }
 
         .modal-content {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: var(--rounded-lg);
-            width: 90%;
-            max-width: 500px;
-            box-shadow: var(--shadow-xl);
-            overflow: hidden;
-            animation: slideUp 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+              background: rgba(255, 255, 255, 0.15);
+              backdrop-filter: blur(12px);
+              -webkit-backdrop-filter: blur(12px);
+               border-radius: var(--rounded-lg);
+               width: 90%;
+               max-width: 500px;
+               box-shadow: var(--shadow-xl);
+               overflow: hidden;
+              border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
 
         @keyframes slideUp {
             from { transform: translateY(20px); opacity: 0; }
@@ -382,10 +419,51 @@ body {
 .btn-icon:hover {
   opacity: 0.8;
 }
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* size of the circle */
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-size: 22px; /* icon size */
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+/* Background colors for each platform */
+.social-link.facebook { background-color: #3b5998; }
+.social-link.twitter { background-color: #1da1f2; }
+.social-link.instagram { background-color: #e4405f; }
+.social-link.linkedin { background-color: #0077b5; }
+.social-link.whatsapp { background-color: #25d366; border: none; cursor: pointer; }
+
+
 
 </style>
     </head>
     <body>
+      <div class="glass-container">
+    <!-- Header -->
+  <header >
+    <div><strong>Hamsini Tech Solutions</strong></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="newBatches.html">New Batches</a>
+      <a href="hire.html">Hire From Us</a>
+    </div>
+  </header>
         <div class="header-image">
          <img src="fullstack.png">
         </div><br/>
@@ -492,7 +570,7 @@ body {
       <img src="python full stack.jpeg" alt="Full Stack Java" />
     </div>
     <div class="card-body">
-      <h2>Python Full Stack</h2>
+      <h2>PythonFullStack</h2>
       <div class="rating">⭐⭐⭐⭐⭐ 5</div><br/>
       <p>📅 <strong>Start Date:</strong> 15 Jul 2025</p>
       <p>👨‍🏫 <strong>by:</strong> Mr. Chakravarthi</p>
@@ -507,6 +585,91 @@ body {
    <button id="nextBtn" class="nav-arrow">❯</button>
 </div>
 </div>
+
+<!-- Enroll Modal -->
+    <div id="enrollModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Enroll Now</h3>
+                <span class="modal-close" onclick="closeEnrollModal()">×</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Course</label>
+                    <input type="text" id="courseName" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" id="enrollName" class="form-control" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Mobile Number</label>
+                    <input type="text" id="enrollMobile" class="form-control" placeholder="Enter your mobile number">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" id="enrollEmail" class="form-control" placeholder="Enter your email address">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Preferred Batch</label>
+                    <select class="form-control">
+                        <option>Morning (9AM - 12PM)</option>
+                        <option>Afternoon (2PM - 5PM)</option>
+                        <option>Evening (6PM - 9PM)</option>
+                        <option>Weekend (Sat & Sun)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeEnrollModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="submitEnrollForm()">Submit Application</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div id="shareModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Share This Course</h3>
+                <span class="modal-close" onclick="closeShareModal()">×</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Share Link</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="text" id="shareUrl" class="form-control" value="https://hamsini.com/courses" readonly>
+                        <button class="btn btn-primary" onclick="copyLink()">Copy</button>
+                    </div>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                  <p style="text-align: center; margin-bottom: 1rem; color: var(--gray-700);">Or share via</p>
+                  <div style="display: flex; justify-content: center; gap: 1rem;">
+                    <div class="social-links">
+                      <a href="https://www.facebook.com/share/1DnsTNzDye/" class="social-link facebook" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                      <a href="https://twitter.com/" class="social-link twitter" target="_blank">
+                         <i class="fab fa-twitter"></i>
+                      </a>
+                      <a href="https://www.instagram.com/hamsinitechsolutions?igsh=NHc5dW00ZjBnYnpm" class="social-link instagram" target="_blank">
+                          <i class="fab fa-instagram"></i>
+                      </a>
+                      <a href="https://www.linkedin.com/in/hamsini-tech-solutions-963bbb378/" class="social-link linkedin" target="_blank">
+                          <i class="fab fa-linkedin-in"></i>
+                      </a>
+                      <button class="social-link whatsapp" onclick="openShare('whatsapp')">
+                          <i class="fab fa-whatsapp"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
 <!--All courses-->
 <script>
 const track = document.getElementById("carouselTrack");
@@ -573,87 +736,6 @@ track.addEventListener("transitionend", () => {
 });
 </script>
     
-<!-- Enroll Modal -->
-    <div id="enrollModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Enroll Now</h3>
-                <span class="modal-close" onclick="closeEnrollModal()">×</span>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label class="form-label">Course</label>
-                    <input type="text" id="courseName" class="form-control" readonly>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Full Name</label>
-                    <input type="text" id="enrollName" class="form-control" placeholder="Enter your full name">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Mobile Number</label>
-                    <input type="text" id="enrollMobile" class="form-control" placeholder="Enter your mobile number">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Email Address</label>
-                    <input type="email" id="enrollEmail" class="form-control" placeholder="Enter your email address">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Preferred Batch</label>
-                    <select class="form-control">
-                        <option>Morning (9AM - 12PM)</option>
-                        <option>Afternoon (2PM - 5PM)</option>
-                        <option>Evening (6PM - 9PM)</option>
-                        <option>Weekend (Sat & Sun)</option>
-                    </select>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-outline" onclick="closeEnrollModal()">Cancel</button>
-                <button class="btn btn-primary" onclick="submitEnrollForm()">Submit Application</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Share Modal -->
-    <div id="shareModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Share This Course</h3>
-                <span class="modal-close" onclick="closeShareModal()">×</span>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label class="form-label">Share Link</label>
-                    <div style="display: flex; gap: 0.5rem;">
-                        <input type="text" id="shareUrl" class="form-control" value="https://hamsini.com/courses" readonly>
-                        <button class="btn btn-primary" onclick="copyLink()">Copy</button>
-                    </div>
-                </div>
-                <div style="margin-top: 1.5rem;">
-                    <p style="text-align: center; margin-bottom: 1rem; color: var(--gray-700);">Or share via</p>
-                    <div style="display: flex; justify-content: center; gap: 1rem;">
-                        <button class="btn btn-icon" style="background-color: #3b5998; color: white;" onclick="openShare('facebook')">
-                            <i class="fab fa-facebook-f"></i>
-                        </button>
-                        <button class="btn btn-icon" style="background-color: #1da1f2; color: white;" onclick="openShare('twitter')">
-                            <i class="fab fa-twitter"></i>
-                        </button>
-                        <button class="btn btn-icon" style="background-color: #0077b5; color: white;" onclick="openShare('linkedin')">
-                            <i class="fab fa-linkedin-in"></i>
-                        </button>
-                        <button class="btn btn-icon" style="background-color: #25d366; color: white;" onclick="openShare('whatsapp')">
-                            <i class="fab fa-whatsapp"></i>
-                        </button>
-                        <button class="btn btn-icon" style="background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); color: white;" onclick="openShare('instagram')">
-                            <i class="fab fa-instagram"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 <script>
         // WhatsApp Functions
         function openWhatsApp() {

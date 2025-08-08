@@ -4,248 +4,264 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
-/* Global Styles */
-body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f2f6fc;
-    }
+        /* Global Styles */
+        body {
+          margin: 0;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background: url('https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+          backdrop-filter: blur(8px);
 
-    /* Header */
-    header {
-      background: #000b24;
-      color: white;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+          min-height: 100vh;
+         }
 
-    header a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
-      transition: color 0.3s ease;
-    }
+        /* Glass Header */
+        header {
+            background: rgba(0, 11, 36, 0.6);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
 
-    header a:hover {
-      color: #00b7ff;
-    }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
 
-/* Course Card */
-.course-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    overflow: hidden;
-    width: 320px;
-    margin: 2rem auto;
-    transition: transform 0.3s ease;
-    position: relative;
-}
+        header a:hover {
+            color: #00b7ff;
+        }
 
-.course-card:hover {
-    transform: translateY(-5px);
-}
+        /* Glass Course Card */
+        .course-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            overflow: hidden;
+            width: 320px;
+            margin: 2rem auto;
+            transition: transform 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-.course-badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: #ff4757;
-    color: #fff;
-    padding: 4px 10px;
-    font-size: 0.75rem;
-    border-radius: 20px;
-    z-index: 1;
-}
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
 
-.course-image-container {
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-}
+        .course-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #ff4757;
+            color: #fff;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            border-radius: 20px;
+            z-index: 1;
+        }
 
-.course-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        .course-image-container {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
 
-.course-content {
-    padding: 1.2rem;
-}
+        .course-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.course-title {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
+        .course-content {
+            padding: 1.2rem;
+        }
 
-.course-instructor {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 0.75rem;
-}
+        .course-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
 
-.course-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
-}
+        .course-instructor {
+            font-size: 0.9rem;
+            color: #ddd;
+            margin-bottom: 0.75rem;
+        }
 
-.course-rating {
-    color: #f39c12;
-}
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #eee;
+            margin-bottom: 1rem;
+        }
 
-.course-date {
-    color: #888;
-}
+        .course-rating {
+            color: #f1c40f;
+        }
 
-/* Buttons */
-.btn {
-    border: none;
-    padding: 0.5rem 0.9rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background 0.3s ease;
-}
+        .course-date {
+            color: #ccc;
+        }
 
-.btn-sm {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.75rem;
-}
+        .btn {
+            border: none;
+            padding: 0.5rem 0.9rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
 
-.btn-primary {
-    background: #0984e3;
-    color: #fff;
-}
+        .btn-sm {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.75rem;
+        }
 
-.btn-primary:hover {
-    background: #74b9ff;
-}
+        .btn-primary {
+            background: #0984e3;
+            color: #fff;
+        }
 
-.btn-outline {
-    border: 1px solid #ccc;
-    background: transparent;
-    color: #333;
-}
+        .btn-primary:hover {
+            background: #74b9ff;
+        }
 
-.btn-outline:hover {
-    background: #f1f1f1;
-}
+        .btn-outline {
+            border: 1px solid #ccc;
+            background: #0984e3;
+            color: #fff;
+        }
 
-.btn-icon {
-    padding: 0.5rem;
-    border-radius: 50%;
-    font-size: 1rem;
-}
+        .btn-outline:hover {
+            background: #74b9ff;
+        }
 
-/* Modals */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0,0,0,0.4);
-    justify-content: center;
-    align-items: center;
-}
+        .btn-icon {
+            padding: 0.5rem;
+            border-radius: 50%;
+            font-size: 1rem;
+        }
 
-.modal-content {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    position: relative;
-}
+        /* Modal Glass Effect */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+        }
 
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
+        .modal-content {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            position: relative;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
 
-.modal-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
 
-.modal-close {
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #888;
-}
+        .modal-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
 
-.modal-close:hover {
-    color: #333;
-}
+        .modal-close {
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #fff;
+        }
 
-.form-group {
-    margin-bottom: 1rem;
-}
+        .modal-close:hover {
+            color: #ddd;
+        }
 
-.form-label {
-    display: block;
-    margin-bottom: 0.4rem;
-    font-weight: 600;
-}
+        .form-group {
+            margin-bottom: 1rem;
+        }
 
-.form-control {
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
+        .form-label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: #fff;
+        }
 
-/* Pagination */
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    gap: 0.5rem;
-}
+        .form-control {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
 
-.pagination button {
-    border: none;
-    background: #dfe6e9;
-    color: #2d3436;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-}
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 0.5rem;
+        }
 
-.pagination button.active,
-.pagination button:hover {
-    background: #0984e3;
-    color: #fff;
-}
-  .course-points {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
+        .pagination button {
+            border: none;
+            background: #dfe6e9;
+            color: #2d3436;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
 
-    .course-points h2 {
-      text-align: left;
-      color: #0984e3;
-      margin-bottom: 1rem;
-    }
+        .pagination button.active,
+        .pagination button:hover {
+            background: #0984e3;
+            color: #fff;
+        }
 
-    .course-points ul {
+        .course-points {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            backdrop-filter: blur(12px);
+            color: #000;
+        }
+
+        .course-points h2 {
+            text-align: left;
+            color: #0984e3;
+            margin-bottom: 1rem;
+        }
+
+        .course-points ul {
       list-style: none;
       padding-left: 0;
       line-height: 1.8;
@@ -258,14 +274,42 @@ body {
     }
 
     .course-points ul li::before {
-      content: counter(name);
+      content: "✔";
       position: absolute;
       left: 0;
       color: #2ecc71;
     }
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
 
-    </style>
-        
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* size of the circle */
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-size: 22px; /* icon size */
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+/* Background colors for each platform */
+.social-link.facebook { background-color: #3b5998; }
+.social-link.twitter { background-color: #1da1f2; }
+.social-link.instagram { background-color: #e4405f; }
+.social-link.linkedin { background-color: #0077b5; }
+.social-link.whatsapp { background-color: #25d366; border: none; cursor: pointer; }
+
+
+</style>
     </head>
     <body>
 
@@ -390,23 +434,27 @@ body {
                 <div style="margin-top: 1.5rem;">
                     <p style="text-align: center; margin-bottom: 1rem; color: var(--gray-700);">Or share via</p>
                     <div style="display: flex; justify-content: center; gap: 1rem;">
-                        <button class="btn btn-icon" style="background-color: #3b5998; color: white;" onclick="openShare('facebook')">
-                            <i class="fab fa-facebook-f"></i>
-                        </button>
-                        <button class="btn btn-icon" style="background-color: #1da1f2; color: white;" onclick="openShare('twitter')">
-                            <i class="fab fa-twitter"></i>
-                        </button>
-                        <button class="btn btn-icon" style="background-color: #0077b5; color: white;" onclick="openShare('linkedin')">
-                            <i class="fab fa-linkedin-in"></i>
-                        </button>
-                        <button class="btn btn-icon" style="background-color: #25d366; color: white;" onclick="openShare('whatsapp')">
-                            <i class="fab fa-whatsapp"></i>
-                        </button>
-                        <button class="btn btn-icon" style="background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); color: white;" onclick="openShare('instagram')">
-                            <i class="fab fa-instagram"></i>
-                        </button>
-                    </div>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/share/1DnsTNzDye/" class="social-link facebook" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://twitter.com/" class="social-link twitter" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/hamsinitechsolutions?igsh=NHc5dW00ZjBnYnpm" class="social-link instagram" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/hamsini-tech-solutions-963bbb378/" class="social-link linkedin" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <button class="social-link whatsapp" onclick="openShare('whatsapp')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                          </div>
+                      </div>
+                  </div>
                 </div>
+               </div>
             </div>
         </div>
     </div>
