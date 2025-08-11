@@ -1067,7 +1067,8 @@
 
             <div class="courses-grid">
                 <!-- AWS & DevOps -->
-                <div class="course-card">
+                <div class="course-card"  onclick="openCoursePage(event, 'awsDevops.html')">
+                     
                     <div class="course-badge">Popular</div>
                     <div class="course-image-container">
                         <img src="devop.jpeg" alt="AWS & DevOps" class="course-image">
@@ -1103,7 +1104,8 @@
                 </div>
 
                 <!-- Azure DevOps -->
-                <div class="course-card">
+                <div class="course-card" onclick="openCoursePage(event, 'azureDevops.html')">
+                
                     <div class="course-image-container">
                         <img src="azure.jpeg" alt="Azure DevOps" class="course-image">
                     </div>
@@ -1138,7 +1140,8 @@
                 </div>
 
                 <!-- Java Full Stack -->
-                <div class="course-card">
+                <div class="course-card" onclick="openCoursePage(event, 'java.html')">
+                    
                     <div class="course-badge">New</div>
                     <div class="course-image-container">
                         <img src="java.jpg" alt="Java Full Stack" class="course-image">
@@ -1174,7 +1177,8 @@
                 </div>
 
                 <!-- React JS -->
-                <div class="course-card">
+                <div class="course-card" onclick="openCoursePage(event, 'react.html')">
+                    
                     <div class="course-image-container">
                         <img src="react.png" alt="React.Js" class="course-image">
                     </div>
@@ -1209,7 +1213,8 @@
                 </div>
 
                 <!-- Generative AI -->
-                <div class="course-card">
+                <div class="course-card" onclick="openCoursePage(event, 'gen.html')">
+                    
                     <div class="course-badge">Trending</div>
                     <div class="course-image-container">
                         <img src="genAI.jpeg" alt="Generative AI" class="course-image">
@@ -1245,7 +1250,8 @@
                 </div>
 
                 <!-- Data Analytics -->
-                <div class="course-card">
+                <div class="course-card" onclick="openCoursePage(event, 'dataAnalytics.html')">
+                    
                     <div class="course-image-container">
                         <img src="DA.jpeg" alt="Data Analytics" class="course-image">
                     </div>
@@ -1280,7 +1286,8 @@
                 </div>
 
                 <!-- Data Science -->
-                <div class="course-card">
+                <div class="course-card" onclick="openCoursePage(event, 'dataScience.html')">
+                    
                     <div class="course-badge">Advanced</div>
                     <div class="course-image-container">
                         <img src="DS.jpeg" alt="Data Science" class="course-image">
@@ -1316,7 +1323,8 @@
                 </div>
 
                 <!-- Power BI -->
-                <div class="course-card">
+                <div class="course-card" onclick="openCoursePage(event, 'powerBi.html')">
+                    
                     <div class="course-image-container">
                         <img src="pbi.png" alt="Power BI" class="course-image">
                     </div>
@@ -1517,6 +1525,9 @@
                     <li class="footer-link"><a href="dataAnalytics.html">Data Analytics</a></li>
                     <li class="footer-link"><a href="gen.html">Gen AI</a></li>
                     <li class="footer-link"><a href="powerBi.html">Power BI</a></li>
+                    <li class="footer-link"><a href="java.html">Java</a></li>
+                    <li class="footer-link"><a href="azureDevops.html">Azure Devops</a></li>
+                    <li class="footer-link"><a href="react.html">ReactJS</a></li>
                 </ul>
             </div>
 
@@ -1635,6 +1646,11 @@
             const message = "Hello Hamsini Tech, I'm interested in your courses. Can you please provide more information?";
             const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
+        }
+        function openCoursePage(event, url) {
+             if (!event.target.closest("button")) {
+             window.location.href = url;
+            }
         }
 
         // Modal Functions
