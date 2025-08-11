@@ -11,7 +11,7 @@
             --primary: #2563eb;
             --primary-light: #3b82f6;
             --primary-dark: #1d4ed8;
-            --secondary: #f59e0b;
+            --secondary: #0954d6;
             --dark: #1e293b;
             --light: #ffffff;
             --gray-100: #f1f5f9;
@@ -63,7 +63,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: white;
         }
-
+        
         /* Header - Glass Type */
         .header {
             background: rgba(255, 255, 255, 0.2);
@@ -82,7 +82,7 @@
         }
 
         .header a {
-            color: var(--dark);
+            color: rgba(13, 11, 11, 0.966);
             text-decoration: none;
         }
 
@@ -116,7 +116,7 @@
         }
 
         .nav-link {
-            color: var(--dark);
+            color: white;
             text-decoration: none;
             font-weight: 500;
             padding: 0.5rem 1rem;
@@ -208,6 +208,75 @@
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
         }
+        .social-sidebar {
+           position: fixed;
+           left: 0;
+           top: 0;
+           height: 100vh;
+           width: 30px; /* Adjust width as needed */
+           z-index: 100;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+    
+        }
+
+        .sidebar-bg {
+           position: absolute;
+           width: 100%;
+           height: 100%;
+           background-size: cover;
+           background-position: center;
+           opacity: 0.7; /* Adjust transparency */
+           z-index: -1;
+        }
+
+        .social-icons {
+           display: flex;
+           flex-direction: column;
+           gap: 15px;
+           padding: 20px 10px;
+           border-radius: 0 12px 12px 0;
+        }
+
+        .social-link {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           width: 40px;
+           height: 40px;
+           border-radius: 50%;
+           background: rgba(255, 255, 255, 0.2);
+           backdrop-filter: blur(10px);
+           -webkit-backdrop-filter: blur(10px);
+           border: 1px solid rgba(255, 255, 255, 0.3);
+           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+           transition: all 0.3s ease;
+        }
+
+        .social-link i {
+           color: white;
+           font-size: 18px;
+           text-shadow: 0 0 8px rgba(0,0,0,0.3);
+        }
+
+        /* Hover Effects */
+        .social-link:hover {
+           transform: scale(1.15);
+           background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Individual Icon Colors on Hover */
+        .social-link.facebook:hover { background: rgba(59, 89, 152, 0.5); }
+        .social-link.twitter:hover { background: rgba(29, 161, 242, 0.5); }
+        .social-link.instagram:hover { 
+            background: linear-gradient(45deg, 
+        rgba(225, 48, 108, 0.5), 
+        rgba(253, 228, 0, 0.5));
+        }
+        .social-link.linkedin:hover { background: rgba(0, 119, 181, 0.5); }
+        .social-link.whatsapp:hover { background: rgba(37, 211, 102, 0.5); }
 
         /* Hero Section */
         .hero {
@@ -218,10 +287,8 @@
             padding: 5rem 2rem;
             text-align: center;
             margin: 2rem;
-            
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-
         .hero-title {
             font-size: 3rem;
             font-weight: 800;
@@ -261,20 +328,22 @@
         }
 
         .btn-primary:hover {
-            background-color: #e67e22;
+            background-color: #23c9e7;
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
         }
 
         .btn-outline {
-            background-color:orange ;
-            border: 2px solid white;
+            background-color:#0954d6 ;
             color:black ;
+            border: none;
         }
 
         .btn-outline:hover {
-            background-color:#e67e22;
+            background-color:#23c9e7;
             transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        
             
         }
 
@@ -338,20 +407,21 @@
         }
 
         .course-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border-radius: var(--rounded-lg);
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .course-badge {
@@ -445,156 +515,149 @@
             color: #0077b5;
         }
         .social-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px; /* size of the circle */
-  height: 50px;
-  border-radius: 50%;
-  color: white;
-  font-size: 22px; /* icon size */
-  text-decoration: none;
-  transition: transform 0.2s ease;
-}
-
-.social-link:hover {
-  transform: scale(1.1);
-}
-
-/* Background colors for each platform */
-.social-link.facebook { background-color: #3b5998; }
-.social-link.twitter { background-color: #1da1f2; }
-.social-link.instagram { background-color: #e4405f; }
-.social-link.linkedin { background-color: #0077b5; }
-.social-link.whatsapp { background-color: #25d366; border: none; cursor: pointer; }
-
-
-        /* Features Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border-radius: var(--rounded-lg);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 50%;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .feature-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .feature-description {
-            color: var(--gray-700);
-            font-size: 0.95rem;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            padding: 4rem 2rem;
-            margin-bottom: 4rem;
-            border-radius: var(--rounded-lg);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 1.5rem;
-            border-radius: var(--rounded-lg);
-            position: relative;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 0;
-            left: 1rem;
-            font-size: 5rem;
-            color: rgba(0, 0, 0, 0.05);
-            font-family: serif;
-            line-height: 1;
-        }
-
-        .testimonial-content {
-            margin-bottom: 1rem;
-            font-style: italic;
-            color: var(--gray-700);
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
             gap: 1rem;
         }
 
-        .author-avatar {
-            width: 50px;
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px; /* size of the circle */
             height: 50px;
             border-radius: 50%;
-            object-fit: cover;
+            color: white;
+            font-size: 22px; /* icon size */
+            text-decoration: none;
+            transition: transform 0.2s ease;
         }
 
-        .author-info h4 {
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-            color: var(--dark);
+        .social-link:hover {
+            transform: scale(1.1);
         }
 
-        .author-info p {
-            color: var(--gray-500);
-            font-size: 0.875rem;
-        }
+        /* Background colors for each platform */
+        .social-link.facebook { background-color: #3b5998; }
+        .social-link.twitter { background-color: #1da1f2; }
+        .social-link.instagram { background-color: #e4405f; }
+        .social-link.linkedin { background-color: #0077b5; }
+        .social-link.whatsapp { background-color: #25d366; border: none; cursor: pointer; }
 
+
+        /* Features Section - Glassmorphism */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--rounded-lg);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.feature-description {
+    color: black;
+    font-size: 0.95rem;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+        /* Minimal Glassmorphism Testimonials */
+.testimonials {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 3rem 1.5rem;
+    margin-bottom: 3rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.testimonial-card:hover {
+    transform: translateY(-5px); /* Only moves up */
+}
+
+.testimonial-content {
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: black;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.author-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.author-info h4 {
+    font-weight: 600;
+    color: white;
+}
+
+.author-info p {
+    color: black;
+    font-size: 0.85rem;
+}
         /* CTA Section */
         .cta-section {
             background: rgba(37, 99, 235, 0.8);
@@ -759,16 +822,15 @@
         }
 
         .modal-content {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius: var(--rounded-lg);
             width: 90%;
             max-width: 500px;
             box-shadow: var(--shadow-xl);
             overflow: hidden;
-            animation: slideUp 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         @keyframes slideUp {
@@ -799,7 +861,7 @@
 
         .modal-close:hover {
             transform: rotate(90deg);
-            color: var(--secondary);
+            color: red;
         }
 
         .modal-body {
@@ -937,13 +999,6 @@
         <img src="logo.png" alt="Hamsini Tech Solutions Logo" style="height: 120px; margin-right: 15px; width: auto;">
     </a>
 </div>
-
-
-
-
-
-
-
 <nav class="nav">
     <a href="blogs.html" class="nav-link">Blogs</a>
     <a href="newBatches.html" class="nav-link">New Batches</a>
@@ -953,23 +1008,47 @@
 <div class="contact-info">
     <div class="contact-item">
         <i class="fas fa-phone-alt contact-icon"></i>
-        <a href="https://wa.me/919494557422" target="_blank"><b>+91 94945 57422</b></a>
+        <a href="https://wa.me/919494557422" target="_blank"><b>+91 9494557422</b></a>
     </div>
     <div class="contact-item">
         <i class="fas fa-envelope contact-icon"></i>
         <a href="hamsinitech@gmail.com"><b>hamsinitech@gmail.com</b></a>
     </div>
 </div>
-
-    </header>
+ </header>
+ 
+    <div class="social-sidebar">
+  <!-- Background Image (will cover left side) -->
+  <div class="sidebar-bg"></div>
+  
+  <!-- Social Icons -->
+  <div class="social-icons">
+    <a href="https://www.facebook.com/share/1DnsTNzDye/" class="social-link facebook" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://twitter.com/" class="social-link twitter" target="_blank">
+        <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://www.instagram.com/hamsinitechsolutions?igsh=NHc5dW00ZjBnYnpm" class="social-link instagram" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/hamsini-tech-solutions-963bbb378/" class="social-link linkedin" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+    <button class="social-link whatsapp" onclick="openShare('whatsapp')">
+        <i class="fab fa-whatsapp"></i>
+    </button>
+  </div>
+</div>
 
     <!-- Hero Section -->
-    gu <section class="hero glass-effect">
+
+     <section class="hero glass-effect">
         <h1 class="hero-title">Transform Your Career with Cutting-Edge Tech Training</h1>
         <p class="hero-subtitle">Join India's leading technology training institute with 100% placement assistance and learn from industry experts</p>
         <div class="hero-cta">
             <button class="btn btn-primary" onclick="openEnrollModal('General Inquiry')">
-                <i class="fas fa-book-open"></i> Explore Courses
+            <i class="fas fa-book-open"></i> Explore Courses
             </button>
             <button class="btn btn-outline" onclick="openWhatsApp()">
                 <i class="fas fa-phone-alt"></i> Talk to Counselor
@@ -1403,17 +1482,17 @@
                     Hamsini Tech Solutions is a premier IT training institute providing industry-relevant courses with 100% placement assistance. We bridge the gap between education and employment.
                 </p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/share/1DnsTNzDye/" class="social-link" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
+                    <a href="https://www.facebook.com/share/1DnsTNzDye/" class="social-link" target="_blank" style="color: #0954d6;">
+                        <i class="fab fa-facebook-f" ></i>
                     </a>
-                    <a href="https://twitter.com/" class="social-link" target="_blank">
-                        <i class="fab fa-twitter"></i>
+                    <a href="https://twitter.com/" class="social-link" target="_blank" style="color: #0077b5;">
+                        <i class="fab fa-twitter" ></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/hamsini-tech-solutions-963bbb378/" class="social-link" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
+                    <a href="https://www.linkedin.com/in/hamsini-tech-solutions-963bbb378/" class="social-link" target="_blank" style="color: #3b5998;">
+                        <i class="fab fa-linkedin-in" ></i>
                     </a>
-                    <a href="https://www.instagram.com/hamsinitechsolutions?igsh=NHc5dW00ZjBnYnpm" class="social-link" target="_blank">
-                        <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/hamsinitechsolutions?igsh=NHc5dW00ZjBnYnpm" class="social-link" target="_blank" style="color: red;">
+                        <i class="fab fa-instagram" ></i>
                     </a>
                 </div>
             </div>
