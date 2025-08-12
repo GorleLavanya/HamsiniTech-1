@@ -309,43 +309,41 @@
             justify-content: center;
         }
 
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--rounded);
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+       .btn {
+      border: none;
+      padding: 0.5rem 0.9rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+      
+    }
 
-        .btn-primary {
-            background-color: var(--secondary);
-            color: var(--dark);
-            border: none;
-        }
+/* Primary Glass Button */
+.btn-primary {
+    background: rgba(9, 84, 214, 0.25);
+    color: white;
+}
 
-        .btn-primary:hover {
-            background-color: #23c9e7;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
+/* Hover Effect */
+.btn-primary:hover {
+    background: rgba(35, 201, 231, 0.4);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
 
-        .btn-outline {
-            background-color:#0954d6 ;
-            color:black ;
-            border: none;
-        }
+/* Outline Glass Button */
+.btn-outline {
+    background: rgba(9, 84, 214, 0.25);
+    color: white;
+}
 
-        .btn-outline:hover {
-            background-color:#23c9e7;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        
-            
-        }
+.btn-outline:hover {
+    background: rgba(35, 201, 231, 0.4);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
 
         /* Main Content */
         .main-content {
